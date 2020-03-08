@@ -70,4 +70,13 @@ describe('Thermostat', function() {
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
   });
+
+  describe('displaying usage levels', function() {
+    it('18 degrees is considered low usage', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.energyUsage()).toEqual('low-usage');
+    });
+  });
 });
