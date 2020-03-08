@@ -55,5 +55,5 @@ Thermostat.prototype.resetTemperature = function() {
 }
 
 Thermostat.prototype.energyUsage = function() {
-  return 'low-usage';
+  return (this.temperature < this.LOW_USAGE_LIMIT ? 'low-usage' : 'medium-usage');
 }

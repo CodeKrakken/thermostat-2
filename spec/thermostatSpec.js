@@ -72,11 +72,15 @@ describe('Thermostat', function() {
   });
 
   describe('displaying usage levels', function() {
-    it('18 degrees is considered low usage', function() {
+    it('17 degrees is considered low usage', function() {
       for (var i = 0; i < 3; i++) {
         thermostat.down();
       }
       expect(thermostat.energyUsage()).toEqual('low-usage');
+    });
+
+    it('20 degrees is considered medium usage', function() {
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
     });
   });
 });
