@@ -82,5 +82,13 @@ describe('Thermostat', function() {
     it('20 degrees is considered medium usage', function() {
       expect(thermostat.energyUsage()).toEqual('medium-usage');
     });
+
+    it('26 degrees is considered high usage', function() {
+      thermostat.switchPowerSavingModeOff();
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('high-usage');
+    });
   });
 });
