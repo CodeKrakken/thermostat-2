@@ -69,6 +69,15 @@ describe('Thermostat', function() {
       thermostat.togglePowerSavingMode();
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
+
+    it('reduces the temperature to 25 if power saving mode is activated', function() {
+      for (var i = 0; i < 12; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.temperature).toBe(32);
+      thermostat.togglePowerSavingMode();
+      expect(thermostat.temperature).toBe(25);
+    })
   });
 
   describe('displaying usage levels', function() {
