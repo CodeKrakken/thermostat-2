@@ -17,5 +17,9 @@ $(document).ready(function() {
     $('#temperature').text(thermostat.temperature);
   });
 
-  $('')
+  $('#powersave-toggle').click(function() {
+    thermostat.togglePowerSavingMode();
+    $('#power-saving-status').text(thermostat.isPowerSavingModeOn() ? "ON" : "OFF");
+    $('#temperature').text(thermostat.temperature);
+  })
 })
