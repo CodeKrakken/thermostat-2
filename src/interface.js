@@ -11,4 +11,11 @@ $(document).ready(function() {
     thermostat.down();
     $('#temperature').text(thermostat.temperature);
   });
+
+  $('#temperature-reset').click(function() {
+    thermostat.resetTemperature();
+    $('#temperature').text(thermostat.temperature);
+  });
+
+  $('')
 })

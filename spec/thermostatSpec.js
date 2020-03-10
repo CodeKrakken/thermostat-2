@@ -46,7 +46,7 @@ describe('Thermostat', function() {
     });
 
     it('can switch power saving mode off', function() {
-      thermostat.switchPowerSavingModeOff();
+      thermostat.togglePowerSavingMode();
       expect(thermostat.isPowerSavingModeOn()).toBe(false);
     });
   });
@@ -54,7 +54,7 @@ describe('Thermostat', function() {
   describe('when power saving mode is off', function() {
 
     beforeEach(function() {
-      thermostat.switchPowerSavingModeOff();
+      thermostat.togglePowerSavingMode();
       expect(thermostat.isPowerSavingModeOn()).toBe(false);
     });
 
@@ -66,7 +66,7 @@ describe('Thermostat', function() {
     });
 
     it('can switch power saving mode on', function() {
-      thermostat.switchPowerSavingModeOn();
+      thermostat.togglePowerSavingMode();
       expect(thermostat.isPowerSavingModeOn()).toBe(true);
     });
   });
@@ -84,7 +84,7 @@ describe('Thermostat', function() {
     });
 
     it('26 degrees is considered high usage', function() {
-      thermostat.switchPowerSavingModeOff();
+      thermostat.togglePowerSavingMode();
       for (var i = 0; i < 6; i++) {
         thermostat.up();
       }
