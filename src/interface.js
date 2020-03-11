@@ -14,7 +14,10 @@ $(document).ready(function() {
   }
 
   function updateCityTemperature() {
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=625aa21afc49ef8fd3e56f982d1512f4&units=metric', function(data) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+    var token = '&appid=625aa21afc49ef8fd3e56f982d1512f4';
+    var units = '&units=metric';
+    $.get(url + city + token + units, function(data) {
       $('#current-temperature').text(data.main.temp)
     })
   }
