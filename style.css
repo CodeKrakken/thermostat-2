@@ -1,5 +1,12 @@
+
 .giblets {
-  text-align:center
+  text-align:center;
+  font-family:"Courier New", Courier, monospace;
+  width:100%;
+}
+
+.colour-column {
+    width:100%;
 }
 
 .low-usage {

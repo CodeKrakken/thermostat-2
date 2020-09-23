@@ -9,20 +9,31 @@
     <script src="src/interface.js"></script>
   </head>
   <body>
-    <section class="giblets">
-      <h1 id="temperature"></h1>
-      <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        Power Saving Mode is <span id="power-saving-status">ON</span>
-        <button id="temperature-reset">Reset</button>
-        <button id="powersave-toggle">PSM</button>
-      </p>
-      <h1>Temperature in <span id="city"></span>: <span id="current-temperature"></span></h1>
-      <form id="select-city">
-        <input id="new-city" type="text" placeholder="Enter city name">
-        <input type="submit">
-      </form>
-    </section>
+    <div class="row">
+      <div class="column">
+        <section class="colour-column">
+          <form id="colour-picker">
+            <input type="color" id="background">
+          </form>
+      </section>
+      </div>
+      <div class="column">
+        <section class="giblets">
+          <h1 id="temperature"></h1>
+          <p>
+            <button id="temperature-up">+</button>
+            <button id="temperature-down">-</button>
+            Power Saving Mode is <span id="power-saving-status">ON</span>
+            <button id="temperature-reset">Reset</button>
+            <button id="powersave-toggle">PSM</button>
+          </p>
+          <h1>Temperature in <span id="city"></span>: <span id="current-temperature"></span></h1>
+          <form id="select-city">
+            <input id="new-city" type="text" placeholder="Enter city name">
+            <input type="submit">
+          </form>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

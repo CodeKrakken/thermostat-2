@@ -1,19 +1,24 @@
 $(document).ready(function() {
   
   var thermostat = new Thermostat();
-  var city = "London";
-  updateWeather();
+//   if ("geolocation" in navigator) {
+//     displayWeather('London')
+//     console.log(getCurrentPosition);
+//   } else {
+//     displayWeather('London');
+//   }
+  updateTemperature();
 
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUsage());
   }
 
-  function updateCity() {
+  function updateCity(city) {
     $('#city').text(city);
   }
 
-  function updateCityTemperature() {
+  function updateCityTemperature(city) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
     var token = '&appid=625aa21afc49ef8fd3e56f982d1512f4';
     var units = '&units=metric';
@@ -22,9 +27,9 @@ $(document).ready(function() {
     })
   }
 
-  function updateWeather() {
-    updateCityTemperature();
-    updateCity();
+  function displayWeather(city) {
+    updateCityTemperature(city);
+    updateCity(city);
   }
 
   $('#temperature-up').click(function() {
@@ -50,7 +55,6 @@ $(document).ready(function() {
 
   $('#select-city').submit(function(event) {
     event.preventDefault();
-    city = $('#new-city').val(); 
-    updateWeather();      
+    displayWeather($('#new-city').val());      
   })
 })
