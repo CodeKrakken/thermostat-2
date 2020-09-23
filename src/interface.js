@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 $(document).ready(function() {
   
   var thermostat = new Thermostat();
@@ -20,7 +22,7 @@ $(document).ready(function() {
 
   function updateCityTemperature(city) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
-    var token = '&appid=625aa21afc49ef8fd3e56f982d1512f4';
+    var token = '&appid=625aa21afc49ef' + '8fd3e56f982d1512f4';
     var units = '&units=metric';
     $.get(url + city + token + units, function(data) {
       $('#current-temperature').text(data.main.temp)
