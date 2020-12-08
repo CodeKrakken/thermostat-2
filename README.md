@@ -18,3 +18,8 @@ Second version of Makers [group project](http://github.com/CodeKrakken/thermosta
 * Dynamic interface powered by jQuery
 * Makes API call to obtain weather information
 * Built by Test Driven Development with Jasmine
+
+## Installation
+
+* `git clone https://github.com/CodeKrakken/thermostat-2`
+* open `index.html` in your browser.
